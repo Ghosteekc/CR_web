@@ -1,0 +1,31 @@
+:root {
+  --bg: var(--tg-theme-bg-color, #1a1a2e);
+  --text: var(--tg-theme-text-color, #eee);
+  --hint: var(--tg-theme-hint-color, #999);
+  --accent: var(--tg-theme-button-color, #6c5ce7);
+  --secondary: var(--tg-theme-secondary-bg-color, #16213e);
+  --link: var(--tg-theme-link-color, #74b9ff);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); }
+#app { min-height: 100vh; display: flex; flex-direction: column; }
+#content { flex: 1; padding: 16px 16px 72px; }
+#nav { position: fixed; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-around; background: var(--secondary); padding: 10px; border-top: 1px solid rgba(255,255,255,.08); }
+#nav button { background: none; border: none; font-size: 1.2rem; opacity: .5; cursor: pointer; color: var(--text); }
+#nav button.active { opacity: 1; }
+h1 { font-size: 1.2rem; margin-bottom: 12px; }
+.meta { color: var(--hint); font-size: .85rem; margin-bottom: 12px; }
+.card { background: var(--secondary); border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+.card.win { border-left: 3px solid #00b894; }
+.card.loss { border-left: 3px solid #d63031; }
+.card h3 { font-size: .85rem; color: var(--hint); margin-bottom: 6px; }
+.btn { display: inline-block; margin-top: 8px; padding: 8px 14px; background: var(--accent); color: #fff; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; font-size: .9rem; }
+.back { color: var(--link); cursor: pointer; margin-bottom: 12px; display: inline-block; }
+.gate { text-align: center; padding: 32px 16px; }
+.gate code { display: block; margin-top: 12px; padding: 8px; background: var(--secondary); border-radius: 8px; }
+.loading { text-align: center; padding: 32px; color: var(--hint); }
+ul.reasons { list-style: none; font-size: .85rem; }
+ul.reasons li { padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 16px; }
+.stat-box { background: var(--secondary); border-radius: 10px; padding: 12px; text-align: center; font-size: .8rem; }
+.stat-box b { display: block; font-size: 1.2rem; }
