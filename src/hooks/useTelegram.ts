@@ -13,7 +13,7 @@ export function useTelegram() {
     tg,
     theme: tg?.colorScheme ?? "light",
     initData: tg?.initData ?? "",
-    openBotLink: (path: string) => tg?.openTelegramLink(`https://t.me/${path}`),
+    openBotLink: (path: string) => tg && tg.openTelegramLink ? tg.openTelegramLink(`https://t.me/${path}`) : window.open(`https://t.me/${path}`, '_blank'),
   };
 }
 

@@ -1,17 +1,18 @@
-export interface TelegramWebApp {
-  initData: string;
-  ready: () => void;
-  expand: () => void;
-  close: () => void;
-  openTelegramLink: (url: string) => void;
-  themeParams: Record<string, string>;
-  colorScheme: "light" | "dark";
-}
+/// <reference types="vite/client" />
 
-declare global {
-  interface Window {
-    Telegram?: { WebApp: TelegramWebApp };
-  }
+interface Window {
+  Telegram: {
+    WebApp: {
+      initData: string;
+      initDataUnsafe: any;
+      ready(): void;
+      expand(): void;
+      close(): void;
+      colorScheme: string;
+      themeParams: any;
+      platform: string;
+      openTelegramLink?: (url: string) => void;
+      openLink?: (url: string) => void;
+    };
+  };
 }
-
-export {};
